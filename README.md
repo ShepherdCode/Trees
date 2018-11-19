@@ -1,2 +1,2 @@
 # Trees
-Catalog of trees living on the Shepherd campus
+A catalog of trees living on the Shepherd University campus.
