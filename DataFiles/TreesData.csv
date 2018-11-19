@@ -1,4 +1,4 @@
-Campus,Tree number,Date,Collected by ,Degrees,Minutes,Seconds,Coordinates (North) Degrees,Degrees,Minutes,Seconds,Coordinates (West) Degrees,Species,Scientific Name,DBH (cm),Notes ,DBH of second stem (cm),Distatance away from tree (m),Clinometer Reading (top of tree),Clinometer Reading (bottom of tree),Tree hight (meters),Tree Condition,Tree exposure to sunlight,Other notes,Phtographed
+Campus,Tree number,Date,Collected by ,Degrees,Minutes,Seconds,Coordinates (North) Degrees,Degrees,Minutes,Seconds,Coordinates (West) Degrees,Species,Scientific Name,DBH (cm),Notes ,DBH of second stem (cm),Distatance away from tree (m),Clinometer Reading (top of tree),Clinometer Reading (bottom of tree),Tree hight (meters),Tree Condition,Tree exposure to sunlight,Other notes,Photographed
 East Campus,1,2/27/16,Adam Hull and Company,39.4309,0,0,39.4309,77.8055,0,0,77.8055,Sugar Maple,Acer saccharum,71,,,40,26,0,19.50930354,Good,Full,cabling system an branch overhanging road; leaning toward road,X
 East Campus,2,2/27/16,Adam Hull and Company,39,25,51,39.43083333,77,48,20,77.80555556,Dogwood,Cornus,17,,,20,24,3,7.856418121,Fair,Partial,"Two dead branches requiring pruning, no danger",X
 East Campus,3,2/27/16,Adam Hull and Company,39,25,51,39.43083333,77,48,20,77.80555556,Dogwood,Cornus,18,,,15,27,0,7.642881742,Fair-poor,Shaded,"Dead Branches, Shaded by building",X
@@ -36,7 +36,7 @@ East Campus,34,2/27/16,"Jaysen, Adam, Tim, Melissa",39,25,54,39.43166667,77,48,1
 East Campus,35,2/27/16,"Jaysen, Adam, Tim, Melissa",39,25,52,39.43111111,77,48,18,77.805,Pecan,Carya illinoinensis,81.5,,,35,45,1,34.38907273,Good,Full,near a building,X
 East Campus,36,2/27/16,"Jaysen, Adam, Tim, Melissa",39,25,52,39.43111111,77,48,18,77.805,Japanese Pagoda,Styphnolobium japonicum,15.5,,15.9,20,26,-2,10.45306716,Good,Partial,N/A,X
 East Campus,37,2/27/16,"Jaysen, Adam, Tim, Melissa",39,25,52,39.43111111,77,48,18,77.805,Japanese Snowbell,Styrax japonicus,12,,13.2,20,26,-2,10.45306716,Good,Partial,gigantic rock by roots,X
-East Campus,38,4/2/16,Ella B. Ben L. Jasmin T.,39,25.896,0,39.4316,77,48.257,0,77.80428333,Weeping Crab Apple,Cedrus atlantica ‘Glauca Pendula’,5,,,10,12,-15,4.805057541,Good,Partial,N/A,X
+East Campus,38,4/2/16,Ella B. Ben L. Jasmin T.,39,25.896,0,39.4316,77,48.257,0,77.80428333,Weeping Crab Apple,Cedrus atlantica,5,,,10,12,-15,4.805057541,Good,Partial,Glauca Pendula,X
 East Campus,39,4/2/16,Ella B. Ben L. Jasmin T.,39,25.894,0,39.43156667,77,48.243,0,77.80405,Japanese Pagoda,Styphnolobium japonicum,10.1,Taken 40 cm from base (branching Point),,10,12,-9,3.70941002,Excellent,Full,Branching at base.,X
 East Campus,40,4/2/16,Ella B. Ben L. Jasmin T.,39,25.89,0,39.4315,77,48.227,0,77.80378333,Ash ,Fraxinus,7,,,10,32,-10,8.011963326,Excellent,Full,N/A,X
 East Campus,41,4/2/16,Ella B. Ben L. Jasmin T.,39,25.926,0,39.4321,77,48.229,0,77.80381667,Zelkova ,Carpinifolia,32.5,,,20,44,1,18.9646742,Good,Full,Non-native (elm Family),X
@@ -284,19 +284,3 @@ East Campus,282,8/1/16,"Dr. Lesser, Rodney, Benjamin",39.43541,0,0,39.43541,77.8
 East Campus,283,8/1/16,"Dr. Lesser, Rodney, Benjamin",39.43539,0,0,39.43539,77.80453,0,0,77.80453,Fir species,Abies,9.6,,,10,28,-8,6.722502664,Excellent,Full,N/A,X
 East Campus,284,8/1/16,"Dr. Lesser, Rodney, Benjamin",39.4353,0,0,39.4353,77.80467,0,0,77.80467,Fir species,Abies,10.4,,,10,29,-8,6.948498862,Excellent,Full,Poision ivy growing up the tree trunk,X
 East Campus,285,8/1/16,"Dr. Lesser, Rodney, Benjamin",39.43527,0,0,39.43527,77.80471,0,0,77.80471,Fir species,Abies,11.9,,,10,27,-8,6.500662842,Excellent,Full,Ivy on trunk ,X
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,
