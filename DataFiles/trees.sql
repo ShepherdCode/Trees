@@ -18,7 +18,6 @@
 --
 -- Table structure for table `trees`
 --
-
 DROP TABLE IF EXISTS `trees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
