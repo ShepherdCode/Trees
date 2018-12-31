@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=.5in]{geometry}
+\usepackage{enumitem}
+
+\title{Shepherd Trees}
+\author{Emily Foote}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Setting Everything Up}
+\subsection{MySql Server}
+\begin{enumerate}
+    \item Installed MySQL community server 8.0.13, username: root, password: shepherd
+    \item Setup MySQL client in terminal \begin{verbatim}
+$ source ~/.bash_profile
+$ echo 'export PATH=$PATH:/usr/local/mysql/bin' >> ~/.bash_profile
+$ mysql -u root -p
+Enter Password: shepherd
+\end{verbatim}
+    \item Change the old password hash to read new password: \begin{verbatim}
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 
+       'shepherd'; 
+Query OK, 0 rows affected (0.01 sec)
+\end{verbatim}
+    \item Now inside the SQL server, check the current databases.
+\begin{verbatim}
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+    \end{verbatim}
+    \item  Create a new database called \texttt{sheptrees} and make sure it is created: \begin{verbatim}
+mysql> CREATE DATABASE sheptrees; 
+Query OK, 1 row affected (0.03 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| sheptrees          |
++--------------------+
+5 rows in set (0.00 sec)
+\end{verbatim}
+    \item  Exit client, change directory to \texttt{Trees/DataFiles}, and run sql script \texttt{trees.sql} into newly created \texttt{sheptrees} database:
+\begin{verbatim}
+$ mysql -u root -p  sheptrees < trees.sql
+Enter password: shepherd
+\end{verbatim}
+\end{enumerate}
+\subsection{PHP Script}
+query.php
+\begin{verbatim}
+<?php
+$servername = "127.0.0.1";
+$username = "root";
+$password = "shepherd";
+$dbname = "sheptrees";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn -> connect_error) {
+  die ("Connection failed: " . $conn -> connect_error);
+}
+$sql = "SELECT TreeID, ScientificName FROM trees WHERE TreeID = 1;";
+$result = $conn -> query($sql);
+if ($result -> num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    echo "TreeID: " . $row["TreeID"] . " - Species: " . $row["ScientificName"] . "<br>";}
+  } else {
+    echo "0 results";
+}
+$conn -> close();
+?>
+\end{verbatim}
+\subsection{Running the Script}\begin{enumerate}
+    \item Make sure MySQL server is up and running
+    \item Open terminal, change directory to webpages' location:\begin{verbatim}
+$ php -S localhost:8000
+PHP 7.1.19 Development Server started at Mon Dec 31 15:55:19 2018
+Listening on http://localhost:8000
+Document root is /Users/emilyfoote/Documents/College/NASA Fellowship/Trees/WebPages
+Press Ctrl-C to quit.
+/query.php
+\end{verbatim}
+    \item Go to web browser, load webpage \texttt{localhost:8000/query.php}.\\
+Result: \\
+TreeID: 1 - Species: Acer saccharum
+
+SUCCESS!!!
+\end{enumerate}
+
+\end{document}
