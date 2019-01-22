@@ -64,7 +64,7 @@
 
 				<font class="pad" face="serif" color=#036 size=5px> Find a Tree! </font>
 
-        <p class="pad"> Select a genus from the drop-down menu below to see all available species on campus as well as the unique Tree ID of those species </p>
+        <p class="pad"> Select a genus from the drop-down menu below to see all available species on campus as well as the unique Tree ID of those species: </p>
 
         <form class="pad" action="" method="post">
         <select name="genuslist">
@@ -117,12 +117,12 @@
 
         if ($result->num_rows > 0) {
             echo "<table class=\"pad\"><tr>
-                  <th>Species</th>
                   <th>Genus</th>
+                  <th>Species</th>
                   <th>TreeID</th></tr>";
             while($row = $result->fetch_assoc()) {
-                echo "<tr><td>".$row["species_name"]."</td>
-                      <td>".$row["genus_name"]."
+                echo "<tr><td>".$row["genus_name"]."</td>
+                      <td>".$row["species_name"]."
                       <td><a href=\"results2.php?tree_id=".$row["tree_id"]."\">".$row["tree_id"]."</a></td></tr>";
             } echo "</table>";
         } else {
