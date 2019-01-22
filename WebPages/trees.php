@@ -22,6 +22,16 @@
 				p.space {
 					padding-top: 2%;
 				}
+        .sub_button {
+          background-color: #036;
+          border: none;
+          color: white;
+          padding:.7% 3%;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
 			</style>
 					<title> Shepherd University | Trees</title>
 		</head>
@@ -43,12 +53,14 @@
 
 				<p class="space"> </p>
 
-				<font class="pad" face="serif" color=#036 size=5px> Try it out! </font>
+				<font class="pad" face="serif" color=#036 size=5px> Find a Tree! </font>
+
+				<p class="pad"> Use the form below to search for a tree by its unique Tree ID number.</p>
 
 				<form class="pad" action = "results.php" method="post">
 					Enter TreeID: <br>
 				<input type = "text" name="search">
-				<input type = "submit" name = "submit" value = "Search">
+				<input type = "submit" name = "submit" value = "Search" class="sub_button">
 				</form>
 
 				<footer class="pad">
