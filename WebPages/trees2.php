@@ -69,7 +69,7 @@
         <form class="pad" action="" method="post">
         <select name="genuslist">
           <?php
-          $servername = "127.0.0.1";
+          $servername = "localhost:3306";
           $username = "root";
           $password = "shepherd";
           $dbname = "sheptrees";
@@ -91,21 +91,12 @@
               echo "0 results";
           }
           }
-          $conn -> close();
           ?>
         </select>
           <input type="submit" name="select" class="sub_button">
         </form>
         <?php
         $selected=$_POST["genuslist"];
-        $servername = "127.0.0.1";
-        $username = "root";
-        $password = "shepherd";
-        $dbname = "sheptrees";
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn -> connect_error) {
-          die ("Connection failed: " . $conn -> connect_error);
-        } else {
 
         $query = "SELECT s.species_name, g.genus_name, t.tree_id
                   FROM Species s, Genus g, Tree t
@@ -127,7 +118,6 @@
             } echo "</table>";
         } else {
             echo "<p class=\"pad\"> 0 results </p>";
-        }
         }
         $conn->close();
         ?>
