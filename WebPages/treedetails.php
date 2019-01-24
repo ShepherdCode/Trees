@@ -1,6 +1,6 @@
 <?php
 $this_tree = $_GET["tree_id"];
-$servername = "127.0.0.1";
+$servername = "localhost:3306";
 $username = "root";
 $password = "shepherd";
 $dbname = "sheptrees";

@@ -1,6 +1,6 @@
 <?php
 $user_input=$_POST["search"];
-$servername = "127.0.0.1";
+$servername = "localhost:3306";
 $username = "root";
 $password = "shepherd";
 $dbname = "sheptrees";
