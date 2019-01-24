@@ -1,5 +1,5 @@
 <?php
-$servername = "127.0.0.1";
+$servername = "localhost:3306";
 $username = "root";
 $password = "shepherd";
 $dbname = "sheptrees";
@@ -9,12 +9,12 @@ if ($conn -> connect_error) {
   die ("Connection failed: " . $conn -> connect_error);
 }
 
-$sql = "SELECT TreeID, ScientificName FROM trees WHERE TreeID = 1;";
+$sql = "SELECT tree_id, scientific_name FROM tree_raw WHERE tree_id = 1;";
 $result = $conn -> query($sql);
 
 if ($result -> num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-    echo "TreeID: " . $row["TreeID"] . " - Species: "  . $row["ScientificName"] . "<br>"; }
+    echo "TreeID: " . $row["tree_id"] . " - Species: "  . $row["scientific_name"] . "<br>"; }
   } else {
     echo "0 results";
 }
