@@ -1,9 +1,12 @@
-
 <?php
+
+$config_file = "config.ini";
+$cred = parse_ini_file($config_file);
+
 $selected=$_POST["genuslist"];
 $servername = "localhost:3306";
-$username = "root";
-$password = "shepherd";
+$username = $cred['username'];
+$password = $cred['password'];
 $dbname = "sheptrees";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn -> connect_error) {
