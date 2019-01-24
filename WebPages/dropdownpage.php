@@ -1,9 +1,13 @@
 <form action="" method="post">
 <select name="genuslist">
   <?php
-  $servername = "127.0.0.1";
-  $username = "root";
-  $password = "shepherd";
+
+  $config_file = "config.ini";
+  $cred = parse_ini_file($config_file);
+
+  $servername = "localhost:3306";
+  $username = $cred['username'];
+  $password = $cred['password'];
   $dbname = "sheptrees";
   $conn = new mysqli($servername, $username, $password, $dbname);
   if ($conn -> connect_error) {
@@ -21,23 +25,13 @@
   <?php
 }} else {
       echo "0 results";
-  }
-  }
-  $conn -> close();
+  }}
   ?>
 </select>
   <input type="submit" name="select">
 </form>
 <?php
 $selected=$_POST["genuslist"];
-$servername = "localhost:3306";
-$username = "root";
-$password = "shepherd";
-$dbname = "sheptrees";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn -> connect_error) {
-  die ("Connection failed: " . $conn -> connect_error);
-} else {
 
 $query = "SELECT s.species_name, g.genus_name, t.tree_id
           FROM Species s, Genus g, Tree t
@@ -60,6 +54,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-}
+
 $conn->close();
 ?>
