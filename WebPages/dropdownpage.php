@@ -51,18 +51,18 @@ $result = $conn -> query($query);
 //Print a table that displays the results of the latter query
 if ($result->num_rows > 0) {
     echo "<table><tr>
-          <th>Species</th>
           <th>Genus</th>
+          <th>Species</th>
           <th>TreeID</th></tr>";
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["species_name"]."</td>
-              <td>".$row["genus_name"]."
+        echo "<tr><td>".$row["genus_name"]."</td>
+              <td>".$row["species_name"]."
               <td><a href=\"treedetails.php?tree_id=".$row["tree_id"]."\">".$row["tree_id"]."</a></td></tr>";
     } echo "</table>";
 } else {
     echo "0 results";
 }
 
-//Close the connection to MySQL Server 
+//Close the connection to MySQL Server
 $conn->close();
 ?>
