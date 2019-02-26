@@ -1,4 +1,7 @@
 <?php
+/*
+*
+*/
 
 $config_file = "config.ini";
 $cred = parse_ini_file($config_file);
@@ -23,12 +26,12 @@ $result = $conn -> query($query);
 
 if ($result->num_rows > 0) {
     echo "<table><tr>
-          <th>Species</th>
           <th>Genus</th>
+          <th>Species</th>
           <th>TreeID</th></tr>";
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["species_name"]."</td>
-              <td>".$row["genus_name"]."
+        echo "<tr><td>".$row["genus_name"]."</td>
+              <td>".$row["species_name"]."
               <td>".$row["tree_id"]."</td></tr>";
     } echo "</table>";
 } else {
