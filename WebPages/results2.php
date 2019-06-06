@@ -55,7 +55,7 @@ $result = $conn -> query($query);
 
 if ($result -> num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-    echo "<img class=\"pad\" width=25% src=\"../pictures/$user_input"."_P.jpg\"> <br>";
+    echo "<img class=\"pad\" width=25% src=\"getPhoto.php?id=$user_input"."_P.jpg\"> <br>";
     echo "Tree ID: " . $row["tree_id"] . "<br>" .
         "Scientific Name: <i>"  . $row["scientific_name"] . "</i><br>" .
         "Common Name: " . $row["common_name"] . "<br>" .
