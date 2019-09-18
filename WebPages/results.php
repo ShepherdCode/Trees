@@ -48,14 +48,20 @@ if ($conn -> connect_error) {
   die ("Connection failed: " . $conn -> connect_error);
 } else {
 
-$query = "SELECT tree_id, scientific_name, common_name, ROUND(height,2) AS height, exposure_to_sunlight AS exposure
-          FROM tree_raw
-          WHERE tree_id = $user_input;";
+$query = "SELECT tree_id,
+								 CONCAT(genus_name, ' ', species_name) AS scientific_name,
+								 common_name,
+								 ROUND(height, 2) AS height,
+								 exposure
+					FROM tree_details d, species s, genus g
+					WHERE d.species_id = s.species_id
+					AND s.genus_id = g.genus_id
+          AND tree_id = $user_input;";
 $result = $conn -> query($query);
 
 if ($result -> num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-    echo "<img class=\"pad\" width=25% src=\"getPhoto.php?id=$user_input"."_P.jpg\"> <br>";
+    echo "<img class=\"pad\" width=25% src=\"getPhoto.php?id=$user_input\"> <br>";
     echo "Tree ID: " . $row["tree_id"] . "<br>" .
         "Scientific Name: <i>"  . $row["scientific_name"] . "</i><br>" .
         "Common Name: " . $row["common_name"] . "<br>" .
