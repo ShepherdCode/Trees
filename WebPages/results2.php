@@ -48,9 +48,15 @@ if ($conn -> connect_error) {
   die ("Connection failed: " . $conn -> connect_error);
 } else {
 
-$query = "SELECT tree_id, scientific_name, common_name, ROUND(height,2) AS height, exposure_to_sunlight AS exposure
-          FROM tree_raw
-          WHERE tree_id = $user_input;";
+$query = "SELECT tree_id,
+								 CONCAT(genus_name, ' ', species_name) AS scientific_name,
+								 common_name,
+								 ROUND(height, 2) AS height,
+								 exposure
+					FROM tree_details d, species s, genus g
+					WHERE d.species_id = s.species_id
+					AND s.genus_id = g.genus_id
+          AND tree_id = $user_input;";
 $result = $conn -> query($query);
 
 if ($result -> num_rows > 0) {
