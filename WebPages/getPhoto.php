@@ -2,14 +2,10 @@
 
 $tree_id = $_GET['id'];
 
-$config_file = "config.ini";
-//Parse config file for 'username' and 'password'
-$cred = parse_ini_file($config_file);
-
-$servername = "localhost:3306";
-$username = ($cred['username']);
-$password = ($cred['password']);
-$dbname = "sheptrees";
+$servername = '';
+$dbname = '';
+$username = '';
+$password = '';
 
 //Establish connection with MySQL Server
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,7 +17,12 @@ if ($conn -> connect_error) {
 $sql = "SELECT photo FROM photos WHERE tree_id = $tree_id;";
 $result = $conn -> query($sql);
 
-$row = $result->fetch_assoc();
-echo $row['photo_id']
+if ($result -> num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    echo $row['photo'];
+  }} else {
+    echo "<font face=\"serif\" color=#036 size=25px> NO RESULTS </font>";
+}
+
 
  ?>

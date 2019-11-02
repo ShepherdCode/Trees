@@ -538,8 +538,8 @@
             <span data-collapse-trigger="subnav" class="btn btn-block btn-default btn-lg collapse-trigger">Trees Links</span>
             <nav class="subnav" data-collapse="subnav">
                 <ul class="list-unstyled collapse-height">
-                    <li><a href="https://www.shepherdu.com/trees" title="Trees Home">Trees Home</a></li>
-                    <li class="active"><a href="/prototype.html" title="Find a Tree">Find a Tree</a></li>
+                    <li class="active"><a href="https://www.shepherdu.com/trees" title="Trees Home">Trees Home</a></li>
+                    <li><a href="prototype.html" title="Find a Tree">Find a Tree</a></li>
                 </ul>
             </nav>
         </div>
@@ -550,46 +550,9 @@
                 <li><a href="/">Home</a></li>
                 <li class="active">Trees</li>
             </ul>
-            <h1>Results</h1>
-            <?php
-$user_input=$_POST["search"];
-$servername = '';
-$dbname = '';
-$username = '';
-$password = '';
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn -> connect_error) {
-  die ("Connection failed: " . $conn -> connect_error);
-} else {
-
-	$query = "SELECT tree_id,
-             CONCAT(genus_name, ' ', species_name) AS scientific_name,
-             common_name,
-             ROUND(height, 2) AS height,
-             exposure
-                FROM tree_details d, species s, genus g
-                WHERE d.species_id = s.species_id
-                AND s.genus_id = g.genus_id
-	          AND tree_id = $user_input;";
-	$result = $conn -> query($query);
-
-	if ($result -> num_rows > 0) {
-	  while($row = $result->fetch_assoc()) {
-	    echo "<img width=25% src=\"getPhoto.php?id=$user_input\"> <br>";
-	    echo "Tree ID: " . $row["tree_id"] . "<br>" .
-	        "Scientific Name: <i>"  . $row["scientific_name"] . "</i><br>" .
-	        "Common Name: " . $row["common_name"] . "<br>" .
-	        "Height: " . $row["height"] . " meters" . "<br>" .
-	        "Exposure to Sunlight: " . $row["exposure"] . "<br>";
-	    echo "</p><p class=\"space\" ></p><p class=\"pad\">";
-	    echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et si turpitudinem fugimus in statu et motu corporis, quid est cur pulchritudinem non sequamur? Nam, ut paulo ante docui, augendae voluptatis finis est doloris omnis amotio. Haec para/doca illi, nos admirabilia dicamus. Duo Reges: constructio interrete. Longum est enim ad omnia respondere, quae a te dicta sunt. Sic enim censent, oportunitatis esse beate vivere. In quibus doctissimi illi veteres inesse quiddam caeleste et divinum putaverunt. Sunt enim prima elementa naturae, quibus auctis vírtutis quasi germen efficitur. Longum est enim ad omnia respondere, quae a te dicta sunt. Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Sed tamen est aliquid, quod nobis non liceat, liceat illis. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Nunc omni virtuti vitium contrario nomine opponitur. Nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; Omnes enim iucundum motum, quo sensus hilaretur. Sed haec quidem liberius ab eo dicuntur et saepius. Quid autem habent admirationis, cum prope accesseris? Dici enim nihil potest verius.";}
-	  } else {
-	    echo "<font face=\"serif\" color=#036 size=25px> ERROR 404: TREE NOT FOUND </font>";
-	}
-	}
-	$conn -> close();
-?>
+            <h1>Trees</h1>
+            <p>TREES is a project to catalog and document every tree growing on the Shepherd University campus and the Bell Arboretum. Biology faculty and their students are collecting data in the field every semester. Computer Science and Data Analytics faculty and their students are building a web app and planning a mobile app.<br></p>
+            <p>Click on "Find a Tree" in the sidebar to search for a tree by ID number.</p>
         </div>
 
     </div>
